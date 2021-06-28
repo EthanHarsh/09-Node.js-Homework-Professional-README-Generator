@@ -1,0 +1,25 @@
+{
+  "name": "09-node.js-homework-professional-readme-generator",
+  "version": "1.0.0",
+  "description": "README generator",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthanHarsh/09-Node.js-Homework-Professional-README-Generator.git"
+  },
+  "author": "Ethan Harsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EthanHarsh/09-Node.js-Homework-Professional-README-Generator/issues"
+  },
+  "homepage": "https://github.com/EthanHarsh/09-Node.js-Homework-Professional-README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
