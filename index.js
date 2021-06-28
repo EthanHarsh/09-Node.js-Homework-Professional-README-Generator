@@ -112,8 +112,8 @@ function buildFile(answers) {
     let license = `## License\n${answers.license}\n\n`
     let install = `## Installation\n${createSteps(answers.install)}\n\n`;
     let instruct = `## Usage Instructions\n${createSteps(answers.instruct)}\n\n`;
-    let contribute = `## Usage Instructions\n${createSteps(answers.contribute)}\n\n`;
-    let test = `## Usage Instructions\n${createSteps(answers.test)}\n\n`;
+    let contribute = `## Contribute\n${createSteps(answers.contribute)}\n\n`;
+    let test = `## Test\n${createSteps(answers.test)}\n\n`;
     let questions = `## Questions?\n![GitHub](answers.github)\nEmail: ${answers.email}\n It is best to get ahold of me on ${answers.best}`
 
 
@@ -125,7 +125,9 @@ function tableBuilder() {
     let places = ['license', 'install', 'usage-instructions', 'contribute', 'test']
     let output = ``;
     places.forEach(el => {
-        output = `${output}[${el}](#${el})\n`
+        let cap = el[0].toUpperCase(); 
+        cap = cap.replace('-', ' ');
+        output = `${output}- [${cap}](#${el})\n`
     });
     return output;
 }
@@ -135,7 +137,7 @@ function createSteps(steps) {
     let output = ``;
     steps = steps.split(', ');
     steps.forEach(el => {
-        output = `${output}${i}. ${el}\n`;
+        output = `${output}- ${i}. ${el}\n`;
         i++;
     })
     return output
