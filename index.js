@@ -12,31 +12,31 @@ const questions = [
     },
     {
         type: 'input',
-        message: `How would you describe your project to someone who has never seen it? (Add steps in an array.  Ex: ['Step', 'Step'])`,
+        message: `How would you describe your project to someone who has never seen it? (Seperate steps with comma.  Ex: Step1, Step2)`,
         name: 'desc',
         suffix: ' - ',
     },
     {
         type: 'input',
-        message: `How would you teach someone to install your project? (Add steps in an array.  Ex: ['Step', 'Step'])`,
+        message: `How would you teach someone to install your project? (Seperate steps with comma.  Ex: Step1, Step2)`,
         name: 'install',
         suffix: ' - ',
     },
     {
         type: 'input',
-        message: `What steps should someone take to use your super awesome project? (Add steps in an array.  Ex: ['Step', 'Step'])`,
+        message: `What steps should someone take to use your super awesome project? (Seperate steps with comma.  Ex: Step1, Step2)`,
         name: 'instruct',
         suffix: ' - ',
     },
     {
         type: 'input',
-        message: `How can someone contribute to your project? (Add steps in an array.  Ex: ['Step', 'Step'])`,
+        message: `How can someone contribute to your project? (Seperate steps with comma.  Ex: Step1, Step2)`,
         name: 'contribute',
         suffix: ' - ',
     },
     {
         type: 'input',
-        message: `How might one test this project? (Add steps in an array.  Ex: ['Step', 'Step'])`,
+        message: `How might one test this project? (Add steps in an array.  Ex: Step1, Step2)`,
         name: 'test',
         suffix: ' - ',
     },
@@ -45,7 +45,7 @@ const questions = [
         message: `Do you know how fast you were going? I'm going to need to see your license please 😂`,
         name: 'license',
         suffix: ' - ',
-        choices: ['MIT', 'None']
+        choices: ['MIT','GNU GPLv3', 'None']
     },
     {
         type: 'input',
@@ -60,10 +60,11 @@ const questions = [
         suffix: ' - ',
     },
     {
-        type: 'input',
+        type: 'list',
         message: `Aaaand what's the best way for people to reach you?`,
         name: 'best',
         suffix: ' - ',
+        choices: ['GitHub', 'Email']
     }
 ];
 
@@ -109,18 +110,35 @@ function buildFile(answers) {
     let desc = `## Description\n${answers.desc}\n\n`;
     let table = `## Table of Contents\n${tableBuilder()}\n\n`;
     let license = `## License\n${answers.license}\n\n`
+    let install = `## Installation\n${createSteps(answers.install)}\n\n`;
+    let instruct = `## Usage Instructions\n${createSteps(answers.instruct)}\n\n`;
+    let contribute = `## Usage Instructions\n${createSteps(answers.contribute)}\n\n`;
+    let test = `## Usage Instructions\n${createSteps(answers.test)}\n\n`;
+    let questions = `## Questions?\n![GitHub](answers.github)\nEmail: ${answers.email}\n It is best to get ahold of me on ${answers.best}`
 
-    let output = title + badge + desc + table + license;
+
+    let output = title + badge + desc + table + license + install + instruct + contribute + questions;
     writeToFile('README.md', output);
 }
 
 function tableBuilder() {
-    let places = ['install', 'usage-instructions', 'contribute', 'test']
+    let places = ['license', 'install', 'usage-instructions', 'contribute', 'test']
     let output = ``;
     places.forEach(el => {
         output = `${output}[${el}](#${el})\n`
     });
     return output;
+}
+
+function createSteps(steps) {
+    let i = 1;
+    let output = ``;
+    steps = steps.split(', ');
+    steps.forEach(el => {
+        output = `${output}${i}. ${el}\n`;
+        i++;
+    })
+    return output
 }
 
 
