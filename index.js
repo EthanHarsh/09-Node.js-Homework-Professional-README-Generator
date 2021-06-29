@@ -12,7 +12,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: `How would you describe your project to someone who has never seen it? (Seperate steps with comma.  Ex: Step1, Step2)`,
+        message: `How would you describe your project to someone who has never seen it?`,
         name: 'desc',
         suffix: ' - ',
     },
@@ -114,10 +114,10 @@ function buildFile(answers) {
     let instruct = `## Usage Instructions\n${createSteps(answers.instruct)}\n\n`;
     let contribute = `## Contribute\n${createSteps(answers.contribute)}\n\n`;
     let test = `## Test\n${createSteps(answers.test)}\n\n`;
-    let questions = `## Questions?\n![GitHub](answers.github)\nEmail: ${answers.email}\n It is best to get ahold of me on ${answers.best}`
+    let questions = `## Questions?\n- [GitHub](${answers.github})\n- Email: ${answers.email}\n - It is best to get ahold of me with ${answers.best}`
 
 
-    let output = title + badge + desc + table + license + install + instruct + contribute + questions;
+    let output = title + badge + desc + table + license + install + instruct + contribute + test + questions;
     writeToFile('README.md', output);
 }
 

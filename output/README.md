@@ -5,11 +5,11 @@
 A friendly ol' CLI README generator
 
 ## Table of Contents
-- [L](#license)
-- [I](#install)
-- [U](#usage-instructions)
-- [C](#contribute)
-- [T](#test)
+- [License](#license)
+- [Install](#install)
+- [Usage-instructions](#usage-instructions)
+- [Contribute](#contribute)
+- [Test](#test)
 
 
 ## License
@@ -29,11 +29,16 @@ MIT
 
 
 ## Contribute
-- 1. Not yet!
+- 1. Not Yet!
+- 2. Coming Soon!
+
+
+## Test
+- 1. Not Yet!
 - 2. Coming Soon!
 
 
 ## Questions?
-![GitHub](answers.github)
+[GitHub](https://github.com/EthanHarsh)
 Email: ethan@ethanharsh.com
  It is best to get ahold of me on Email
