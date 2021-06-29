@@ -127,6 +127,9 @@ function tableBuilder() {
     places.forEach(el => {
         let cap = el[0].toUpperCase(); 
         cap = cap.replace('-', ' ');
+        for(let c = 1; c < el.length; c++) {
+            cap = cap + el[c];
+        }
         output = `${output}- [${cap}](#${el})\n`
     });
     return output;
