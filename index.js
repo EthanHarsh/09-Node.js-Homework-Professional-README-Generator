@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const inq = require('inquirer');
+const buildFile = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -90,8 +91,8 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             console.log(`answer =`)
-            console.log(answers)
-            buildFile(answers);
+            console.log(answers)  
+            writeToFile('README.md', buildFile(answers));
         })
         .catch((error) => {
             if (error.isTtyError) {
@@ -103,7 +104,7 @@ function init() {
             }
         })
 }
-
+/*
 function buildFile(answers) {
     let title = `# ${answers.title}\n`;
     let badge = `![License Badge](https://img.shields.io/badge/License-${answers.license}-green)\n\n`;
@@ -120,33 +121,7 @@ function buildFile(answers) {
     let output = title + badge + desc + table + license + install + instruct + contribute + test + questions;
     writeToFile('README.md', output);
 }
-
-function tableBuilder() {
-    let places = ['license', 'install', 'usage-instructions', 'contribute', 'test']
-    let output = ``;
-    places.forEach(el => {
-        let cap = el[0].toUpperCase(); 
-        cap = cap.replace('-', ' ');
-        for(let c = 1; c < el.length; c++) {
-            cap = cap + el[c];
-        }
-        output = `${output}- [${cap}](#${el})\n`
-    });
-    return output;
-}
-
-function createSteps(steps) {
-    let i = 1;
-    let output = ``;
-    steps = steps.split(', ');
-    steps.forEach(el => {
-        output = `${output} ${i}. ${el}\n`;
-        i++;
-    })
-    return output
-}
-
-
+*/
 
 // Function call to initialize app
 init();
