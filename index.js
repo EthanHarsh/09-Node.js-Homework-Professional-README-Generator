@@ -111,10 +111,10 @@ function buildFile(answers) {
     let table = `## Table of Contents\n${tableBuilder()}\n\n`;
     let license = `## License\n${answers.license}\n\n`
     let install = `## Installation\n${createSteps(answers.install)}\n\n`;
-    let instruct = `## Usage Instructions\n${createSteps(answers.instruct)}\n\n`;
-    let contribute = `## Contribute\n${createSteps(answers.contribute)}\n\n`;
+    let instruct = `## Usage\n${createSteps(answers.instruct)}\n\n`;
+    let contribute = `## Contributing\n${createSteps(answers.contribute)}\n\n`;
     let test = `## Test\n${createSteps(answers.test)}\n\n`;
-    let questions = `## Questions?\n- [GitHub](${answers.github})\n- Email: ${answers.email}\n - It is best to get ahold of me with ${answers.best}`
+    let questions = `## Questions?\n- [GitHub](${answers.github})\n- Email: ${answers.email}\n- It is best to get ahold of me with ${answers.best}.`
 
 
     let output = title + badge + desc + table + license + install + instruct + contribute + test + questions;
@@ -140,7 +140,7 @@ function createSteps(steps) {
     let output = ``;
     steps = steps.split(', ');
     steps.forEach(el => {
-        output = `${output}- ${i}. ${el}\n`;
+        output = `${output} ${i}. ${el}\n`;
         i++;
     })
     return output
