@@ -4,7 +4,7 @@
 ## Application Demo
 [YouTube](https://youtu.be/m7ahttQrLlc)
 
-![Application Screenshot](utils/screenshot.png)
+![Application Screenshot](utils/screenshot1.png)
 
 ## Description
 A friendly ol' CLI README generator. Build using Node.js
