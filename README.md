@@ -7,7 +7,7 @@
 ![Application Screenshot](utils/screenshot1.png)
 
 ## Description
-A friendly ol' CLI README generator. Build using Node.js
+A friendly ol' CLI README generator. Built using Node.js
 
 Project Goals:
 - Generate README's
