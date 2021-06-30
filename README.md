@@ -1,5 +1,5 @@
 # 09-Node.js-Homework-Professional-README-Generator
-![Node.js Badge](https://img.shields.io/badge/JavaScript-Node.js-green) ![Advanced CSS Badge](https://img.shields.io/badge/CLI-green) ![OSU Bootcamp Badge](https://img.shields.io/badge/OSU-Bootcamp-red)
+![Node.js Badge](https://img.shields.io/badge/JavaScript-Node.js-green) ![Advanced CSS Badge](https://img.shields.io/badge/Node.js-CLI-green) ![OSU Bootcamp Badge](https://img.shields.io/badge/OSU-Bootcamp-red)
 
 ## Application Demo
 [YouTube](https://youtu.be/m7ahttQrLlc)
